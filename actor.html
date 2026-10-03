@@ -29,6 +29,7 @@
 
 let correct = 0
 let notCorrect = 0
+let usePic = 1
 
 function checkActor() {
     actor = document.getElementById("actor").value
@@ -45,6 +46,25 @@ function checkActor() {
     out = document.getElementById("result")
     out.innerHTML = "Correct: " + correct + " Not Correct: " + notCorrect
 }
+function updatePic() {
+    switch (usePic) {
+        case 1:
+            document.getElementById("foodPic").src = "ice cream.jfif"
+            usePic = 2
+            break
+
+        case 2:
+            document.getElementById("foodPic").src = "tacos.jfif"
+            usePic = 3
+            break
+
+        case 3:
+            document.getElementById("foodPic").src = "burger.jfif"
+            usePic = 1
+            break
+    }
+}
+
 
 </script>
 
