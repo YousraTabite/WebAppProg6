@@ -26,6 +26,18 @@
 </form>
 
 <p id="result">Costs will be displayed here</p>
+<form>
+    <input type="radio" id="product" name="operation" value="mul" onclick="chooseOp()">
+    <label for="product">product</label>
+
+    <input type="radio" id="sum" name="operation" value="add" onclick="chooseOp()">
+    <label for="sum">sum</label>
+
+    <input type="radio" id="divide" name="operation" value="div" onclick="chooseOp()">
+    <label for="divide">divide</label>
+</form>
+
+<p id="operationResult">Operation result will be displayed here</p>
 
 <script>
 
@@ -52,6 +64,23 @@ function doDiscount() {
 
     document.getElementById("result").innerHTML = "Costs are: " + costs
 }
+function chooseOp() {
+    count = Number(document.getElementById("numberItems").value)
+    discountAt = Number(document.getElementById("numberForDiscount").value)
+
+    if (document.getElementById("product").checked) {
+        value = count * discountAt
+        text = count + " times " + discountAt + " is " + value
+    } else if (document.getElementById("sum").checked) {
+        value = count + discountAt
+        text = count + " plus " + discountAt + " is " + value
+    } else if (document.getElementById("divide").checked) {
+        value = count / discountAt
+        text = count + " divided by " + discountAt + " is " + value
+    }
+
+    document.getElementById("operationResult").innerHTML = text
+
 
 </script>
 
