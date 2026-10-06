@@ -16,10 +16,10 @@
     <label for="guess">Who is the actor</label>
     <input type="text" id="guess"> <br>
 
-    <input type="button" onclick="checkActor()" value="Check the guess">
+    <input type="button" id="guessButton" onclick="checkActor()" value="Check the guess">
 </form>
 
-<p id="result">Correct: 0 Not Correct: 0</p>
+<div id="result">Correct: 0 Not Correct: 0</div>
 
 <div>
     <img id="foodPic" src="burger.jfif" width="150" height="150" onclick="updatePic()">
@@ -41,11 +41,20 @@ function checkActor() {
     } else {
         notCorrect = notCorrect + 1
         alert("Better luck next time")
+
+        if (notCorrect > 10) {
+            document.getElementById("guessButton").setAttribute("onclick", "tooManyWrong()")
+        }
     }
 
     out = document.getElementById("result")
     out.innerHTML = "Correct: " + correct + " Not Correct: " + notCorrect
 }
+
+function tooManyWrong() {
+    alert("Sorry, too many wrong guesses.")
+}
+
 function updatePic() {
     switch (usePic) {
         case 1:
