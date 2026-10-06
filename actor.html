@@ -2,27 +2,29 @@
 <html>
     <head>
         <title>Actors Game</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
  
  
 <body>
+    <div class="container mt-4">
 
 <h2>Actors by Yousra</h2>
 
 <form>
     <label for="actor">Peter Pan</label>
-    <input type="password" id="actor" value="Robin Williams"> <br>
+    <input type="password" id="actor" value="Robin Williams" class="form-control">
 
     <label for="guess">Who is the actor</label>
-    <input type="text" id="guess"> <br>
+    <input type="text" id="guess" class="form-control">
 
-    <input type="button" id="guessButton" onclick="checkActor()" value="Check the guess">
+    <input type="button" id="guessButton" class="btn btn-primary mt-2" onclick="checkActor()" value="Check the guess">
 </form>
 
-<div id="result">Correct: 0 Not Correct: 0</div>
+<div id="result" class="alert alert-info mt-3">Correct: 0 Not Correct: 0</div>
 
 <div>
-    <img id="foodPic" src="burger.jfif" width="150" height="150" onclick="updatePic()">
+    <img id="foodPic" src="burger.jfif" width="150" height="150" class="rounded shadow mt-2" onclick="updatePic()">
 </div>
 
 <script>
@@ -77,5 +79,6 @@ function updatePic() {
 
 </script>
 
+    </div>
 </body>
 </html> 
